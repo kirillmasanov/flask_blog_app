@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 
+{% block title %}Flask blog{% endblock %}
+
 {% block body %}
-
-
-        <div class="page-header">
-            Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+            <h5>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!
             {% if not known %}
             Pleased to meet you!
             {% else %}
             Happy to see you again!
-            {% endif %}
-        </div>
-        <form method="POST">
-            <div class="form-group">
-                {{ form.hidden_tag() }}
-                {{ form.name.label(for="exampleInputEmail1") }}<br>
-                {{ form.name() }}
-            </div>
+            {% endif %}</h5>
+            <form method="POST">
+                <div class="form-group">
+                    <h5>{{ form.hidden_tag() }}
+                    {{ form.name.label() }}<br>
+                    {{ form.name() }}</h5>
+                </div>
             {{ form.submit() }}
-        </form>
-
+            </form>
+        </div>
+      </div>
+    </div>
 
 {% endblock %}
