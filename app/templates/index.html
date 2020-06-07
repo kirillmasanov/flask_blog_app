@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+        <div class="page-header">
+            Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!
+            {% if not known %}
+            Pleased to meet you!
+            {% else %}
+            Happy to see you again!
+            {% endif %}
+        </div>
+        <form method="POST">
+            <div class="form-group">
+                {{ form.hidden_tag() }}
+                {{ form.name.label(for="exampleInputEmail1") }}<br>
+                {{ form.name() }}
+            </div>
+            {{ form.submit() }}
+        </form>
+
+
+{% endblock %}

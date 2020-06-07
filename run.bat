@@ -1,0 +1,1 @@
+set FLASK_APP=flask_blog_app.py && set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
