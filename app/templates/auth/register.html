@@ -2,15 +2,13 @@
 
 {% from 'bootstrap/form.html' import render_form %}
 
-{% block title %}Blog - Login{% endblock %}
+{% block title %}Blog - Register{% endblock %}
 
 {% block body %}
     <div class="page-header">
-        <h1>Login</h1>
+        <h1>Register</h1>
     </div>
     <div class="col-md-8">
         {{ render_form(form) }}
-        <br>
-        <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
     </div>
 {% endblock %}
