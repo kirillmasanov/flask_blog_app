@@ -10,14 +10,14 @@
             <a class="nav-link" href="#">Home</a>
         </li>
      </ul>
-     <ul class="nav navbar-nav navbar-text navbar-right">
+     <ul class="nav navbar-nav">
         {% if current_user.is_authenticated %}
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
-                    <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
-                    <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('auth.change_password') }}">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Log Out</a></li>
                 </ul>
             </li>
         {% else %}
