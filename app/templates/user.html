@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from 'bootstrap/pagination.html' import render_pagination %}
 
 {% block title %}Blog - {{ user.username }}{% endblock %}
 
@@ -33,4 +34,6 @@
 </div>
 <h3>Posts by {{ user.username }}</h3>
 {% include '_posts.html' %}
+<br>
+{{ render_pagination(pagination) }}
 {% endblock %}
