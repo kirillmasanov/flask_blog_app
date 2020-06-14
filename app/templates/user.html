@@ -19,5 +19,13 @@
     {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
     <p>Member since {{ moment(user.member_since).format('L') }}.<br>
         Last seen {{ moment(user.last_seen).fromNow() }}.</p>
+    <p>
+        {% if user == current_user %}
+        <a href="{{ url_for('.edit_profile') }}" class="btn btn-secondary" role="button">Edit Profile</a>
+        {% endif %}
+        {% if current_user.is_administrator() %}
+        <a href="{{ url_for('.edit_profile_admin', id=user.id) }}" class="btn btn-danger" role="button">Edit Profile [Admin]</a>
+        {% endif %}
+    </p>
 </div>
 {% endblock %}
