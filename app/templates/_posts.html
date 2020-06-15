@@ -17,6 +17,11 @@
                 {% endif %}
             </div>
             <div class="post-footer">
+                {% if current_user == post.author %}
+                <a href="{{ url_for('.edit', id=post.id) }}" class="badge badge-primary">Edit</a>
+                {% elif current_user.is_administrator() %}
+                <a href="{{ url_for('.edit', id=post.id) }}" class="badge badge-danger">Edit [Admin]</a>
+                {% endif %}
                 <a href="{{ url_for('.post', id=post.id) }}" class="badge badge-secondary">Permalink</a>
             </div>
         </div>
