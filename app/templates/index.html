@@ -13,7 +13,17 @@
     {{ render_form(form) }}
     {% endif %}
 </div>
-{% include '_posts.html' %}
+<div class="post-tabs">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a {% if not show_followed %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="{{ url_for('.show_all') }}">All</a></li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+            <a {% if show_followed %} class="nav-link active"{% else %}class="nav-link"{% endif %} href="{{ url_for('.show_followed') }}">Followers</a></li>
+        {% endif %}
+    </ul>
+    {% include '_posts.html' %}
+</div>
 <br>
 {{ render_pagination(pagination, '.index') }}
 {% endblock %}
