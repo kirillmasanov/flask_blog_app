@@ -1,7 +1,20 @@
 {% extends "base.html" %}
+{% from 'bootstrap/pagination.html' import render_pagination %}
+{% from 'bootstrap/form.html' import render_form %}
 
 {% block title %}Blog - Post{% endblock %}
 
 {% block body %}
 {% include '_posts.html' %}
+
+<h4 id="comments">Comments</h4>
+{% if current_user.can(Permission.COMMENT) %}
+<div class="comment-form">
+    {{ render_form(form) }}
+</div>
+{% endif %}
+{% include '_comments.html' %}
+
+{{ render_pagination(pagination) }}
+
 {% endblock %}
