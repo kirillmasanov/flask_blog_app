@@ -12,7 +12,7 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     BLOG_MAIL_SUBJECT_PREFIX = '[Flask_blog_app]'
-    BLOG_MAIL_SENDER = 'blog@example.com'
+    BLOG_MAIL_SENDER = 'mytest.01@mail.ru'
     BLOG_ADMIN = os.environ.get('BLOG_ADMIN')
     SSL_REDIRECT = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
