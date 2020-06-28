@@ -3,3 +3,4 @@
 *.sqlite
 /tmp/
 /.env
+/config.py.local
