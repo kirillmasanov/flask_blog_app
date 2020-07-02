@@ -46,3 +46,4 @@ venv
 .env-mysql
 /config.py_local
 /.env-heroku
+/config.py
